@@ -58,10 +58,12 @@
 <body>
 <script>
 
+
+    var changeSize = 0;
     var widthDot = window.innerWidth;
     var heightDot = window.innerHeight;
-    var maxRadiusDot = 15;
-    var minRadiusDot = 6;
+    var maxRadiusDot = 50 + changeSize;
+    var minRadiusDot = 6 +changeSize;
 
     var svg = d3.select("body").append("svg")
                 .attr("width", widthDot)
@@ -603,7 +605,7 @@ function callback (error, _ted_main1000, root,discipline, sourse) {
           // console.log(thisnode);
         }
         // console.log(thisnode);
-        var temp = Math.sqrt(d.x*d.x + d.y*d.y)/40;
+        var temp = Math.sqrt(d.x*d.x + d.y*d.y)/40 + changeSize + d.views/1000000;
         if(temp > maxRadiusDot && thisnode.clicked == 0 &&thisnode.index != 0 && thisnode.over == 0 && thisnode.recommend == 0 && thisnode.shrink == 0) {
           thisnode.r = maxRadiusDot;
           return maxRadiusDot;
@@ -625,7 +627,7 @@ function callback (error, _ted_main1000, root,discipline, sourse) {
       .style("fill",function(d,i) {
         var thisnode = nodes[i];
         if(thisnode.over == 0 && thisnode.recommend == 0 && i!=0 && thisnode.shrink == 0) {
-          var temp = Math.sqrt(d.x*d.x + d.y*d.y)/35;
+          var temp = Math.sqrt(d.x*d.x + d.y*d.y)/35 + changeSize/2.5;
           // thisnode.h = 360;
           // thisnode.s = 0.5;
           // thisnode.l = 1;
@@ -710,6 +712,9 @@ function random(times) {
 
         var direction = d.depth > currentDepth ? 1 : 0;
         currentDepth = d.depth;
+        changeSize = currentDepth *3;
+        maxRadiusDot = 50 + changeSize;
+        minRadiusDot = 6 +changeSize;
         console.log(currentDepth);
         // console.log(direction);
         var sliceData = d;
@@ -726,7 +731,7 @@ function random(times) {
               var thisNode = nodes[i];
               var depthIndex = sliceData.depth-1;
               var Index = sliceData.data.index;
-              if(thisNode.array[depthIndex][Index] >0)
+              if(thisNode.array[depthIndex][Index] >1)
               { 
                 console.log("win");
                 if(direction == 1) {return 0;}
