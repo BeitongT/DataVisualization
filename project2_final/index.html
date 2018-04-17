@@ -642,7 +642,7 @@ function random(times) {
             var thisNode = nodes[i];
             var depthIndex = sliceData.depth-1;
             var Index = sliceData.data.index;
-            if(thisNode.array[depthIndex][Index] >1 || (depthIndex == 1 && Index == 4 && thisNode.array[depthIndex][Index] >0))
+            if(thisNode.array[depthIndex][Index] >0 || (depthIndex == 1 && Index == 4 && thisNode.array[depthIndex][Index] >0))
             { 
               counter ++;
               console.log("win");
