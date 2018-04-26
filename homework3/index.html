@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Beitong Tian bt346</title>
+</head>
+<body>
+
+
+<!-- 1. Create a 200x200 pixel SVG element with the word "Cornell" in red, centered in
+the exact middle (vertically and horizontally), using the Palatino typeface, with a
+drop shadow for the word. Consult the SVG specification to find out how to change
+color and font attributes, set text alignment, and add filters and shadows. Put a
+small orange circle at 100,100 so we can see that your text is centered. If you do not
+have Palatino, you may use another font to test your code. (20pts) -->
+
+
+<p id="p1">
+<svg height="200" width="200" >
+	<circle cx="100" cy="100" r="50" fill="orange" />
+	<text x="100" y="100" style = "fill:red; font-size:20;font-family:Palatino;text-anchor:middle;alignment-baseline:central;text-shadow:1px 1px 1px black">Cornell</text>
+</svg>
+	
+</p>
+<!-- 2. Create a 200x200 pixel SVG element. Reproduce the plot in Figure 2 of the
+Wickham "Layered Grammar of Graphics" reading using SVG elements. Recalculate
+the pixel positions for the (x, y) coordinates in Table 2 as necessary. Remember to
+account for the "padding" pixels below and to the left of the axes. Include axis
+labels. You do NOT need to include the short tick marks. Table 2 contains data
+values. Table 3 contains those data values transformed into pixel coordinates. You
+will need to recalculate these pixel coordinates. The result will not look exactly like
+Figure 2; we will know what to expect for the data in Table 2. Points intersecting
+axes are ok. (20pts) -->
+
+
+
+<p id="p2">
+
+
+<svg height="200" width="200" style="border: solid #ccc 1px">
+<text x="24" y="99" style = "fill:black; font-size:10;font-family:Palatino;text-anchor:middle;alignment-baseline:central">C</text>
+<text x="106" y="195" style = "fill:black; font-size:10;font-family:Palatino;text-anchor:middle;alignment-baseline:central">A</text>
+<text x="105" y="5" style = "fill:black; font-size:10;font-family:Palatino;text-anchor:middle;alignment-baseline:central">Title</text>
+<line x1="46" x2="166" y1="189" y2="189" stroke="black" stroke-width="2"/>
+<line x1="46" x2="46" y1="189" y2="9" stroke="black" stroke-width="2"/>
+<circle cx="46" cy="189" r="3" fill="black" />
+<circle cx="61" cy="182" r="3" fill="black" />
+<rect x="91" y="157" width="6" height="6" fill="black" />
+<rect x="166" y="9" width="6" height="6" fill="black" />
+</svg>
+	
+</p>
+
+<!-- 3. Use SVG <path> elements to create a design for the course flag. You must
+include three enneagrams and position them using the transform attribute. You
+may use any additional shapes or patterns you can think of as long as you
+implement them using <path> elements. If you use a tool to generate coordinates
+for shapes, please cite that tool. You must also include the course motto: ESSE ET
+VIDERI using a <text> element. Hint: for repeated shapes, write the coordinates
+once, copy it several times, and then use some combination of translate() and
+scale() transformations to place them. There will be a small creativity component in
+grading. (20pts) -->
+
+<p id="p3">
+<svg height="200" width="400">
+	<rect x="0" y="0" width="400" height="200" fill="blue" />
+	<text x="200" y="30" style = "fill:white; font-size:20;font-family:Palatino;text-anchor:middle;alignment-baseline:central">ESSE ETVIDERI</text>
+
+		
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="rotate(40 200 111)" />
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="rotate(80 200 111)"/>
+
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.51)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.51)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.51)"/>
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.26)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.26)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.26)"/>
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.13)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.13)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.13)"/>
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.065)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.065)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.065)"/>
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.0325)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.0325)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.0325)"/>
+
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform="scale(0.01625)" transform-origin = "200 111";/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(40) scale(0.01625)"/>
+		<path d="M 200,54 150,140 250,140 Z" style = "fill: transparent;stroke-width:2;stroke: white;" transform-origin = "200 111" transform="rotate(80) scale(0.01625)"/>
+		<!-- /*<path d = "M Z" style = "fill: white;"/>*/ -->
+
+
+	
+
+</svg>
+	
+</p>
+
+<!-- 4. Make a bar plot that represents the frequency of numbers in this dataset:
+var samples = [4, 1, 7, 3, 15, 10, 0, 10, 8, 4, 4, 2, 15, 6, 7,
+6];
+The x-axis will correspond to values from the dataset, and the y-axis will correspond
+to the frequency of those values. Figure out how to map those numbers into pixel
+coordinates. Consider the following dataset:
+A. Make a bar plot of the data values using SVG rectangles. Create one rectangle for
+each distinct integer in the dataset. Each one should be positioned so that it is
+centered at the x-axis value that corresponds to its data value. For example, the
+middle of the bar for "3" should be at the pixel coordinate that corresponds to the
+value 3. In other words, leave empty space even for values that have no
+observations: there should be a gap between the bars for 8 and 10. (20pts)
+B. Calculate the mean, median, mode, and standard deviation and record those
+numbers in the <p> tag. You may use whatever tool you like, we only need to see
+the result. (5 pts)
+C. Add vertical lines to the plot corresponding to the mean (in red), median (in blue)
+and mode (in purple). For the "mean" line, make a line from the top of the figure to
+the bottom, at the x position in the figure that corresponds to the mean you
+calculated. (5 pts)
+D. Use an SVG rectangle with a semi-transparent fill to show the region covering one
+standard deviation on both sides of the mean. In other words, make a rectangle
+from the top of the figure to the bottom that is centered at the mean, and two
+standard deviations wide. (5pts)
+E. Calculate the probability that a randomly selected datapoint is greater than or
+equal to 4 and record it in the <p> tag. (5pts) -->
+
+
+<p id="p4">
+MEAN = 6.375 
+<br> 
+Median = 6
+<br> 
+Mode = 4
+<br> 
+Standard deviation = 4.4403
+<br>
+Probability = 75%
+
+<br>
+<svg height="300" width="500">
+
+	<line x1="30" x2="450" y1="270" y2="270" stroke="black" stroke-width="1"/>
+	<line x1="30" x2="30" y1="20" y2="270" stroke="black" stroke-width="1"/>
+
+	<g stroke="black" stroke-width="1" stroke="black" stroke-width="1">
+
+		<line x1="25" x2="30" y1="20" y2="20" />
+		<line x1="25" x2="30" y1="70" y2="70" />
+		<line x1="25" x2="30" y1="120" y2="120" />
+		<line x1="25" x2="30" y1="170" y2="170" />
+		<line x1="25" x2="30" y1="220" y2="220" />
+
+		<line x1="55" x2="55" y1="270" y2="275" />
+		<line x1="80" x2="80" y1="270" y2="275" />
+		<line x1="105" x2="105" y1="270" y2="275" />
+		<line x1="130" x2="130" y1="270" y2="275" />
+		<line x1="155" x2="155" y1="270" y2="275" />
+		<line x1="180" x2="180" y1="270" y2="275" />
+		<line x1="205" x2="205" y1="270" y2="275" />
+		<line x1="230" x2="230" y1="270" y2="275" />
+		<line x1="255" x2="255" y1="270" y2="275" />
+		<line x1="280" x2="280" y1="270" y2="275" />
+		<line x1="305" x2="305" y1="270" y2="275" />
+		<line x1="330" x2="330" y1="270" y2="275" />
+		<line x1="355" x2="355" y1="270" y2="275" />
+		<line x1="380" x2="380" y1="270" y2="275" />
+		<line x1="405" x2="405" y1="270" y2="275" />
+		<line x1="430" x2="430" y1="270" y2="275" />
+	</g>
+
+
+	<text x="5" y="150" style = "fill:black; font-size:10;font-family:Palatino;text-anchor:middle;alignment-baseline:central" transform="rotate(90 10 150)">Frequency</text>	
+	<text x="240" y="290" style = "fill:black; font-size:10;font-family:Palatino;text-anchor:middle;alignment-baseline:central" >Value</text>
+
+
+
+	<g style = "fill:black; font-size:10;font-family:Palatino">
+
+		<text x="20" y="20" style ="text-anchor:middle;alignment-baseline:central">5</text>
+		<text x="20" y="70" style ="text-anchor:middle;alignment-baseline:central">4</text>
+		<text x="20" y="120" style ="text-anchor:middle;alignment-baseline:central">3</text>
+		<text x="20" y="170" style ="text-anchor:middle;alignment-baseline:central">2</text>
+		<text x="20" y="220" style ="text-anchor:middle;alignment-baseline:central">1</text>
+		<text x="20" y="270" style ="text-anchor:middle;alignment-baseline:central">0</text>
+		
+
+		<text x="43" y="280" style ="text-anchor:middle;alignment-baseline:central">0</text>
+		<text x="68" y="280" style ="text-anchor:middle;alignment-baseline:central">1</text>
+		<text x="93" y="280" style ="text-anchor:middle;alignment-baseline:central">2</text>
+		<text x="118" y="280" style ="text-anchor:middle;alignment-baseline:central">3</text>
+		<text x="143" y="280" style ="text-anchor:middle;alignment-baseline:central">4</text>
+		<text x="168" y="280" style ="text-anchor:middle;alignment-baseline:central">5</text>
+		<text x="193" y="280" style ="text-anchor:middle;alignment-baseline:central">6</text>
+		<text x="218" y="280" style ="text-anchor:middle;alignment-baseline:central">7</text>
+		<text x="243" y="280" style ="text-anchor:middle;alignment-baseline:central">8</text>
+		<text x="268" y="280" style ="text-anchor:middle;alignment-baseline:central">9</text>
+		<text x="293" y="280" style ="text-anchor:middle;alignment-baseline:central">10</text>
+		<text x="318" y="280" style ="text-anchor:middle;alignment-baseline:central">11</text>
+		<text x="343" y="280" style ="text-anchor:middle;alignment-baseline:central">12</text>
+		<text x="368" y="280" style ="text-anchor:middle;alignment-baseline:central">13</text>
+		<text x="393" y="280" style ="text-anchor:middle;alignment-baseline:central">14</text>
+		<text x="418" y="280" style ="text-anchor:middle;alignment-baseline:central">15</text>
+
+	</g>
+
+	<rect x="30" y="220" width="25" height="50" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="55" y="220" width="25" height="50" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="80" y="220" width="25" height="50" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="105" y="220" width="25" height="50" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="130" y="120" width="25" height="150" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="155" y="20" width="25" height="0" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="180" y="170" width="25" height="100" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="205" y="170" width="25" height="100" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="230" y="220" width="25" height="50" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="255" y="20" width="25" height="0" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="280" y="170" width="25" height="100" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="305" y="20" width="25" height="0" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="330" y="20" width="25" height="0" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="355" y="20" width="25" height="0" fill="grey" stroke-width = "0.5" stroke = "black"/>
+	<rect x="405" y="170" width="25" height="100" fill="grey" stroke-width = "0.5" stroke = "black"/>
+
+	<!-- add mean and median -->
+	<line x1="202" x2="202" y1="20" y2="270" stroke="red" stroke-width="1"/>
+	<line x1="193" x2="193" y1="20" y2="270" stroke="blue" stroke-width="1"/>
+	<line x1="143" x2="143" y1="20" y2="270" stroke="purple" stroke-width="1"/>
+
+	<!-- make the rect -->
+	<rect x="91" y="20" width="222" height="250" fill="yellow" stroke-width = "0.5" stroke = "black" opacity = "0.5"/>
+
+
+
+
+</svg>
+	
+</p>
+
+
+
+
+
+</body>
+</html>

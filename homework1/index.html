@@ -1,0 +1,61 @@
+<p id = "p1">Problem 1: This is the first question in homework1.
+The valid javascript types are "boolean", "number", "object", "string", "undefined" and the new one is symbol. The answer of example is shown in the console. 
+<script type="text/javascript">
+	console.log("Problem1");
+	console.log(typeof true); 
+	console.log(typeof 123); 
+	console.log(typeof [1, 2, 3]);
+	console.log(typeof "String");
+	console.log(typeof UNDEFINED); 
+	console.log(typeof Symbol('~'));
+</script>
+</p>
+
+<p id = "p2">Problem 2: This is the second question in homework1. For a, the error is that the name should have quotation marks. The wrong one is { name: "Data-driven web applications" } . And the fixed one is {"name":"Data-driven web applications"} . For b, the error is that the comment should be put outside. The wrong one is { /* the next variable is a course number */ "number": 3300 } . And the fixed one is /* the next variable is a course number */ {"number": 3300 }. For c, the error is that the right square bracket is missed and the symbol after "number" should be semicolon. The wrong one is [ { "name": "DDWA", "number": 3300 } { "name": "Java",
+"number": 2110 } { "name": "Python", "number"; 1110 } and the fixed one is [{ "name": "DDWA", "number": 3300 },{ "name": "Java","number": 2110}, { "name": "Python", "number": 1110 }]. The JSON.parse test results are shown in the console.
+<script type="text/javascript">
+// a. { name: "Data-driven web applications" }
+
+// name should have quotation marks
+	console.log("Problem2");
+	obj1 = JSON.parse('{"name":"Data-driven web applications"}');
+	// obj1 = {name:"Data-driven web applications"};
+
+	console.log(obj1);
+	console.log(obj1.name);
+
+// b. { /* the next variable is a course number */ "number": 3300 }
+
+// comment should be put outside
+	/* the next variable is a course number */
+	obj2 = JSON.parse('{"number": 3300 }');
+	console.log(obj2);
+	console.log(obj2.number);
+
+// c. [ { "name": "DDWA", "number": 3300 } { "name": "Java",
+// "number": 2110 } { "name": "Python", "number"; 1110 }
+
+// right Square bracket； semicolon;
+	obj3 = JSON.parse('[{ "name": "DDWA", "number": 3300 },{ "name": "Java","number": 2110}, { "name": "Python", "number": 1110 }]');
+	console.log(obj3);
+
+
+</script>
+</p>
+
+<p id = "p3">Problem 3: This is the third question in homework1.
+The JSON list is [{ "year": 2011, "Pass": true,"courses":["CS001","CS002","CS003"] },{ "year": 2012, "Pass": false,"courses":["CS004","CS005","CS006"] }, { "year": 2013, "Pass": false,"courses":["CS007","CS008","CS009"] }].
+<script type="text/javascript">
+	console.log("Problem3");
+	var json = '[{ "year": 2011, "Pass": true,"courses":["CS001","CS002","CS003"] },{ "year": 2012, "Pass": false,"courses":["CS004","CS005","CS006"] }, { "year": 2013, "Pass": false,"courses":["CS007","CS008","CS009"] }]' ;
+	obj = JSON.parse(json);
+	console.log(obj);
+</script>
+</p>
+
+<p id = "p4"> Problem 4:
+
+If I submit the homework late I will be scored zero. And my two lowest scores will be discarded. 
+If I submit the homework in a wrong way the only way to solve it is to provide homework with timestamped which is not changeable. If CMS doesn't work, we can submit the homework by email without penalty. 
+
+</p>

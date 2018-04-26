@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bt346 homework6</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="http://d3js.org/topojson.v2.min.js"></script>
+	<style type="text/css">
+		svg { border: solid #ccc 1px; }
+		path.country { fill: #ccc; stroke: #888;; }
+
+	</style>
+</head>
+
+<body>
+
+<p id="P2">Jobs line chart
+
+	<br>
+	<svg width="960" height="500"></svg>
+
+
+	<script>
+
+		var svg = d3.select("svg"),
+	    margin = {top: 20, right: 20, bottom: 30, left: 50},
+	    width = +svg.attr("width") - margin.left - margin.right,
+	    height = +svg.attr("height") - margin.top - margin.bottom,
+	    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+		var parseTime = d3.timeParse("%Y-%m-%d");
+
+		var x = d3.scaleTime()
+		    .rangeRound([0, width]);
+
+		var y = d3.scaleLinear()
+		    .rangeRound([height, 0]);
+
+
+		var line = d3.line()
+		    .x(function(d) { return x(d.Time); })
+		    .y(function(d) { return y(d.Value); });
+
+
+		function parseLine (line) {
+			if (Number(line["Year"] + line["Period"].replace("M",""))>200701) {
+				return { Value: Number(line["Value"].replace("(P)","")), Time: parseTime(line["Year"] + "-" + line["Period"].replace("M","")+"-01") ,Color: line["Value"].indexOf("P")};
+			}
+  			
+		}
+
+		d3.csv("bls.txt", parseLine, function(error, data) {
+
+		  if (error) throw error;
+		  console.log(data);
+
+		  x.domain(d3.extent(data, function(d) { return d.Time; }));
+		  y.domain(d3.extent(data, function(d) { return d.Value*1.2; }));
+
+		  g.append("path")
+		      .datum(data)
+		      .attr("fill", "none")
+		      .attr("stroke", "black")
+		      .attr("stroke-linejoin", "round")
+		      .attr("stroke-linecap", "round")
+		      .attr("stroke-width", 1.5)
+		      .attr("d", line);
+
+        svg.selectAll("dot")
+	        .data(data)
+	      	.enter().append("circle")
+	        .style("fill", function(d) { return (d.Color == -1) ? "#f48970":"#54e5d4" })
+	        .attr("r", 3.5)
+	        .attr("cx", function(d) { return x(d.Time)+margin.left; })
+	        .attr("cy", function(d) { return y(d.Value)+margin.top; });
+
+		  g.append("g")
+		      .attr("transform", "translate(0," + height + ")")
+		      .call(d3.axisBottom(x))
+		      .append("text")
+		      .attr("fill", "#000")
+		      .attr("x", (width + margin.left)/2)
+		      .attr("y", "2.6em" )
+		      .attr("text-anchor", "middle")
+		      .text("Date");
+
+		  g.append("g")
+		      .call(d3.axisLeft(y))
+		      .append("text")
+		      .attr("fill", "#000")
+		      .attr("transform", "rotate(-90)")
+		      .attr("x", -220)
+		      .attr("dy", "-4em")
+		      .attr("text-anchor", "middle")
+		      .text("JobChange");
+
+		  g.append("text")
+		      .attr("fill", "#000")
+		      .attr("x", 480)
+		      .attr("y", 10)
+		      .attr("text-anchor", "middle")
+		      .text("Monthly Job Change");
+
+		});
+
+	</script>
+
+
+	
+</p>
+
+
+
+
+</body>
+</html>
